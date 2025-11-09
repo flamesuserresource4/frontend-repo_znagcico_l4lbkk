@@ -9,7 +9,7 @@ export default function App() {
   const [mode, setMode] = useState("Inbound");
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-[#ECEAFF] via-[#F7F6FF] to-[#ECF4FF]">
+    <div className="min-h-screen w-full bg-gradient-to-br from-[#ECEAFF] via-[#F7F6FF] to-[#ECF4FF] antialiased selection:bg-[#8A5CF6]/20 selection:text-[#1E1E1E]">
       <div className="mx-auto max-w-[1400px] px-2 sm:px-4 py-3 flex">
         <Sidebar
           current={section}
@@ -19,7 +19,7 @@ export default function App() {
           }}
         />
         <main className="flex-1 flex flex-col min-h-[calc(100vh-24px)]">
-          <Topbar />
+          <Topbar section={section} />
           <div className="flex-1">
             {section === "Dashboard" && <Dashboard />}
             {(section === "Inbound" || section === "Outbound") && (
